@@ -17,6 +17,7 @@
     }
 
 
+
     .bg {
       background: url(./image/Default1_Pre.jpg) no-repeat;
       top: 0;
@@ -31,6 +32,7 @@
       position: absolute;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
+
     }
 
     .bg2 {
@@ -113,19 +115,23 @@
     }
 
     .bg .wh100 {
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 150%;
+      height: 100%;
+      scroll-snap-type: y mandatory;
     }
 
     .bg .wh100active {
       width: 100%;
-      height: 150%;
+      height: 145%;
       background: rgba(255, 255, 255, 0.2);
       -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
       box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
       transition: 0.2s linear;
       box-shadow: #232323 0px 0px 10px;
+
     }
 
     .bg .searchTerms .icon-sousuo {
@@ -164,7 +170,7 @@
 
 <body>
   <!-- <div id="bg"> -->
-  <div id="box" >
+  <div id="box">
     <div :class="inputCustom1 === 1 ? 'bg' : 'bg bg2' " @mousedown="FunctionModuleShow">
       <div :class="inputCustom1 === 1 ? 'searchTerms wh100' : 'searchTerms wh100active' "
         @click.self="searchTermsClickOut">
@@ -179,10 +185,10 @@
     </div>
 
     <div class="bg bg2 bg3" v-show="isShow" @click.self="isShow=false">
-      <div class="FunctionModule" >
+      <div class="FunctionModule">
         <ul class="top" @click.self="isShow=false">
           <li v-for="(item,index) in changelist" :key="item.id">
-            <a href="#">
+            <a :href="item.href">
               <div :class="item.iconfont ">
               </div>
               <div>
@@ -212,128 +218,153 @@
           mytext: localStorage.getItem("username"),
           isDisable: 0,
           isDisable2: 0,
-          changelist: [{
-            id: 1,
-            iconfont: "iconfont icon-shuyi_fanyi-36",
-            name: "翻译"
-          },
-          {
-            id: 2,
-            iconfont: "iconfont icon-ditu",
-            name: "地图"
-          },
-          {
-            id: 3,
-            iconfont: "iconfont icon-tupianbizhi",
-            name: "图片"
-          },
-          {
-            id: 4,
-            iconfont: "iconfont icon-yunpan",
-            name: "云盘"
-          },
-          {
-            id: 5,
-            iconfont: "iconfont icon-youxiang",
-            name: "快传"
-          },
-          {
-            id: 6,
-            iconfont: "iconfont icon-yinle",
-            name: "QQ邮箱"
-          },
+          changelist: [
+            {
+              id: 1,
+              iconfont: "iconfont icon-shuyi_fanyi-36",
+              href: "https://fanyi.baidu.com/",
+              name: "翻译"
+            },
+            {
+              id: 2,
+              iconfont: "iconfont icon-ditu",
+              href: "https://map.baidu.com/",
+              name: "地图"
+            },
+            {
+              id: 3,
+              iconfont: "iconfont icon-tupianbizhi",
+              href: "https://www.pexels.com/zh-cn/",
+              name: "图片"
+            },
+            {
+              id: 4,
+              iconfont: "iconfont icon-yunpan",
+              href: "https://pan.baidu.com/disk/main#/index?category=all",
+              name: "云盘"
+            },
+            {
+              id: 5,
+              iconfont: "iconfont icon-youxiang",
+              href: "https://airportal.cn/",
+              name: "快传"
+            },
+            {
+              id: 6,
+              iconfont: "iconfont icon-yinle",
+              href: "https://mail.qq.com/",
+              name: "QQ邮箱"
+            },
 
           ],
           datalist: [
             {
               id: 1,
               iconfont: "iconfont icon-shuyi_fanyi-36",
+              href: "https://fanyi.baidu.com/",
               name: "翻译"
             },
             {
               id: 2,
               iconfont: "iconfont icon-ditu",
+              href: "https://map.baidu.com/",
               name: "地图"
             },
             {
               id: 3,
               iconfont: "iconfont icon-tupianbizhi",
+              href: "https://www.pexels.com/zh-cn/",
               name: "图片"
             },
             {
               id: 4,
               iconfont: "iconfont icon-yunpan",
+              href: "https://pan.baidu.com/disk/main#/index?category=all",
               name: "云盘"
             },
             {
               id: 5,
               iconfont: "iconfont icon-youxiang",
+              href: "https://airportal.cn/",
               name: "快传"
             },
             {
               id: 6,
               iconfont: "iconfont icon-yinle",
+              href: "https://mail.qq.com/",
               name: "QQ邮箱"
             },
             {
               id: 7,
               iconfont: "iconfont icon-zhaopian",
+              href: "https://music.163.com/",
               name: "云音乐"
             },
             {
               id: 8,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 9,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 10,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 11,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 11,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 12,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 13,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 14,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 15,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 16,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
             {
               id: 17,
               iconfont: "iconfont icon-bilibili",
-              name: "壁纸"
+              href: "https://www.bilibili.com/",
+              name: "哔哩哔哩"
             },
 
 
@@ -402,8 +433,8 @@
           // if(this.isDisable2 === 29 )
 
         },
-        FunctionModuleShow(evt){
-          if(evt.button === 2){
+        FunctionModuleShow(evt) {
+          if (evt.button === 2) {
             this.isShow = true
           }
         }
