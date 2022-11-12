@@ -20,8 +20,13 @@ ul li {
   top: 40px;
   width: 650px;
   height: 415px;
+  overflow-y: auto;
 
   /* background-color: aquamarine; */
+}
+
+.bg3 .FunctionModule::-webkit-scrollbar {
+  width: 0px;
 }
 
 .bg3 .FunctionModule .top {}

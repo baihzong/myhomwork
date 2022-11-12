@@ -164,8 +164,8 @@
 
 <body>
   <!-- <div id="bg"> -->
-  <div id="box">
-    <div :class="inputCustom1 === 1 ? 'bg' : 'bg bg2' ">
+  <div id="box" >
+    <div :class="inputCustom1 === 1 ? 'bg' : 'bg bg2' " @mousedown="FunctionModuleShow">
       <div :class="inputCustom1 === 1 ? 'searchTerms wh100' : 'searchTerms wh100active' "
         @click.self="searchTermsClickOut">
         <div class="datalist" @click.self="searchTermsClickOut">{{times}}</div>
@@ -178,9 +178,9 @@
       </div>
     </div>
 
-    <div class="bg bg2 bg3">
-      <div class="FunctionModule">
-        <ul class="top">
+    <div class="bg bg2 bg3" v-show="isShow" @click.self="isShow=false">
+      <div class="FunctionModule" >
+        <ul class="top" @click.self="isShow=false">
           <li v-for="(item,index) in changelist" :key="item.id">
             <a href="#">
               <div :class="item.iconfont ">
@@ -192,9 +192,8 @@
           </li>
 
           <li class="topButton">
-            <button @click="topButtonAdd">+</button>
+            <button @click="topButtonAdd" :disabled="changelist.length===datalist.length">+</button>
           </li>
-
         </ul>
       </div>
     </div>
@@ -207,9 +206,12 @@
     var obj = {
       data() {
         return {
+          isShow: false,
           times: "",
           inputCustom1: 1,
           mytext: localStorage.getItem("username"),
+          isDisable: 0,
+          isDisable2: 0,
           changelist: [{
             id: 1,
             iconfont: "iconfont icon-shuyi_fanyi-36",
@@ -313,6 +315,26 @@
               iconfont: "iconfont icon-bilibili",
               name: "壁纸"
             },
+            {
+              id: 14,
+              iconfont: "iconfont icon-bilibili",
+              name: "壁纸"
+            },
+            {
+              id: 15,
+              iconfont: "iconfont icon-bilibili",
+              name: "壁纸"
+            },
+            {
+              id: 16,
+              iconfont: "iconfont icon-bilibili",
+              name: "壁纸"
+            },
+            {
+              id: 17,
+              iconfont: "iconfont icon-bilibili",
+              name: "壁纸"
+            },
 
 
           ]
@@ -369,8 +391,21 @@
 
 
         //添加功能模块
-        topButtonAdd(){
-          
+        topButtonAdd(num) {
+          let length = this.changelist.length
+          let length2 = this.datalist.length
+
+          this.changelist.push(this.datalist[length])
+          console.log(this.datalist[length])
+
+          this.isDisable2++;
+          // if(this.isDisable2 === 29 )
+
+        },
+        FunctionModuleShow(evt){
+          if(evt.button === 2){
+            this.isShow = true
+          }
         }
       }
     }
