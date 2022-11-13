@@ -8,7 +8,7 @@
   <script src="lib/vue.next.js"></script>
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./icon/iconfont.css">
-  <title>Document</title>
+  <title>第八小组</title>
   <style>
     * {
       margin: 0;
@@ -184,7 +184,7 @@
       <div class="FunctionModule">
         <ul class="top" @click.self="isShow=false">
           <li v-for="(item,index) in changelist" :key="item.id">
-            <a :href="item.href">
+            <a :href="item.href" target="_blank">
               <div :class="item.iconfont ">
               </div>
               <div>
@@ -306,61 +306,61 @@
               id: 9,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩1"
             },
             {
               id: 10,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩2"
             },
             {
               id: 11,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩3"
             },
             {
               id: 11,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩4"
             },
             {
               id: 12,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩5"
             },
             {
               id: 13,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩6"
             },
             {
               id: 14,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩7"
             },
             {
               id: 15,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩8"
             },
             {
               id: 16,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩9"
             },
             {
               id: 17,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩"
+              name: "哔哩哔哩10"
             },
           ]
         }
@@ -419,11 +419,10 @@
         topButtonAdd(num) {
           let length = this.changelist.length
           let length2 = this.datalist.length
-
           this.changelist.push(this.datalist[length])
-          console.log(this.datalist[length])
 
-          this.isDisable2++;
+
+          // this.isDisable2++;
           // if(this.isDisable2 === 29 )
 
         },
