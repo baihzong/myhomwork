@@ -19,7 +19,7 @@
 
 
     .bg {
-      background: url(./image/Default1_Pre.jpg) no-repeat;
+      background: url(./image/Default1_Pre.jpg);
       top: 0;
       left: 0;
       width: 100%;
@@ -160,7 +160,8 @@
       transition: 0.2s linear;
       box-shadow: #232323 0px 0px 10px;
     }
-    .searchTermsUp{
+
+    .searchTermsUp {
       display: none;
     }
   </style>
@@ -169,15 +170,15 @@
 <body>
   <!-- <div id="bg"> -->
   <div id="box">
-    <div :class="inputCustom1 === 1 ? 'bg' : 'bg bg2' " @mousedown="FunctionModuleShow">
+    <div style="" :class="inputCustom1 === 1 ? 'bg' : 'bg bg2' " @mousedown="FunctionModuleShow" ref="TheStyle2">
       <div :class="inputCustom1 === 1 ? 'searchTerms wh100' : 'searchTerms wh100active' "
         @click.self="searchTermsClickOut">
         <div class="datalist" @click.self="searchTermsClickOut">{{times}}</div>
         <form action="http://www.baidu.com/baidu" target="_blank">
           <input name="word" type="text" placeholder="搜索" :class="inputCustom1 === 1 ? 'inputCustom' : 'inputCustom2' "
             @click.self="searchTermsClick" v-model="mytext">
-          <button @click="searchTermsUp" :class="inputCustom1 === 1 ? 'searchTermsUp' : 'iconfont icon-sousuo' " value="百度搜索"
-            type="submit"></button>
+          <button @click="searchTermsUp" :class="inputCustom1 === 1 ? 'searchTermsUp' : 'iconfont icon-sousuo' "
+            value="百度搜索" type="submit"></button>
         </form>
       </div>
     </div>
@@ -364,7 +365,26 @@
               href: "https://www.bilibili.com/",
               name: "测试10"
             },
+          ],
+          imageList: [
+            {
+              id: '1',
+              src: "./image/Default1_Pre.jpg",
+            },
+            {
+              id: '2',
+              src: "./image/Default2_Pre.jpg",
+            },
+            {
+              id: '3',
+              src: "./image/Default3_Pre.jpg",
+            },
+            {
+              id: '4',
+              src: "./image/Default4_Pre.jpg",
+            },
           ]
+
         }
       },
       created() {
@@ -400,6 +420,28 @@
           }
           //拼接格式化当前时间
           _this.times = hours + ":" + minutes + ":" + seconds;
+
+          if (hours >= 5 && hours <= 8) {
+            this.$refs.TheStyle2.style.background = 'url(' + this.imageList[0].src + ')';
+            this.$refs.TheStyle2.style.backgroundSize = '100% 100%';
+            this.$refs.TheStyle2.style.transition = 'all 2s';
+            console.log("早晨")
+          }else if(hours >=9 && hours <= 16){
+            this.$refs.TheStyle2.style.background = 'url(' + this.imageList[1].src + ')';
+            this.$refs.TheStyle2.style.backgroundSize = '100% 100%';
+            this.$refs.TheStyle2.style.transition = 'all 2s';
+            console.log("白天")
+          }else if(hours >= 17 && hours <= 19){
+            this.$refs.TheStyle2.style.background = 'url(' + this.imageList[2].src + ')';
+            this.$refs.TheStyle2.style.backgroundSize = '100% 100%';
+            this.$refs.TheStyle2.style.transition = 'all 2s';
+            console.log("傍晚")
+          }else{
+            this.$refs.TheStyle2.style.background = 'url(' + this.imageList[3].src + ')';
+            this.$refs.TheStyle2.style.backgroundSize = '100% 100%';
+            this.$refs.TheStyle2.style.transition = 'all 2s';
+            console.log("晚上")
+          }
         },
         //输入框状态
         searchTermsClick() {
@@ -432,7 +474,9 @@
           if (evt.button === 2) {
             this.isShow = true
           }
+
         }
+
       }
     }
 
