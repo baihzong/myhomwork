@@ -160,7 +160,9 @@
       transition: 0.2s linear;
       box-shadow: #232323 0px 0px 10px;
     }
-
+    .searchTermsUp{
+      display: none;
+    }
   </style>
 </head>
 
@@ -174,7 +176,7 @@
         <form action="http://www.baidu.com/baidu" target="_blank">
           <input name="word" type="text" placeholder="搜索" :class="inputCustom1 === 1 ? 'inputCustom' : 'inputCustom2' "
             @click.self="searchTermsClick" v-model="mytext">
-          <button @click="searchTermsUp" :class="inputCustom1 === 1 ? '' : 'iconfont icon-sousuo' " value="百度搜索"
+          <button @click="searchTermsUp" :class="inputCustom1 === 1 ? 'searchTermsUp' : 'iconfont icon-sousuo' " value="百度搜索"
             type="submit"></button>
         </form>
       </div>
@@ -306,61 +308,61 @@
               id: 9,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩1"
+              name: "测试1"
             },
             {
               id: 10,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩2"
+              name: "测试2"
             },
             {
               id: 11,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩3"
+              name: "测试3"
             },
             {
               id: 11,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩4"
+              name: "测试4"
             },
             {
               id: 12,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩5"
+              name: "测试5"
             },
             {
               id: 13,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩6"
+              name: "测试6"
             },
             {
               id: 14,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩7"
+              name: "测试7"
             },
             {
               id: 15,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩8"
+              name: "测试8"
             },
             {
               id: 16,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩9"
+              name: "测试9"
             },
             {
               id: 17,
               iconfont: "iconfont icon-bilibili",
               href: "https://www.bilibili.com/",
-              name: "哔哩哔哩10"
+              name: "测试10"
             },
           ]
         }
